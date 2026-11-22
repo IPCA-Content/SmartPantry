@@ -12,13 +12,20 @@ using System.Windows.Shapes;
 namespace SmartPantry
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Displays the main application interface.
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Constructors
+
+        /// <summary>
+        /// Initializes the main window.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        #endregion
     }
 }
