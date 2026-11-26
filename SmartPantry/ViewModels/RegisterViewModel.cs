@@ -30,10 +30,7 @@ namespace SmartPantry.ViewModels
         /// </summary>
         public RegisterViewModel()
         {
-            _username = "Gil Vicente - Register";
-
             RegisterCommand = new RelayCommand(RegisterLogin);
-
         }
 
         #endregion

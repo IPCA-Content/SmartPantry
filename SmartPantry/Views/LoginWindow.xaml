@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800">
     <Grid Margin="208,125,155,241">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="342*"/>
+        </Grid.ColumnDefinitions>
         <TextBox x:Name="txtUsername"
-                             Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"/>
+                             Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" Grid.ColumnSpan="3"/>
 
         <Button x:Name="btnLogin"                          
                             BorderThickness="0"
@@ -17,8 +22,8 @@
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
-                            Margin="61,130,139,-100"
-                            Command="{Binding LoginCommand}">
+                            Margin="60,130,139,-100"
+                            Command="{Binding LoginCommand}" Grid.Column="1" Grid.ColumnSpan="2">
 
         </Button>
 
@@ -29,10 +34,11 @@
                     FontSize="12"
                     FontFamily="Montserrat"
                     Cursor="Hand"                           
-                    Margin="11,231,89,-201"
-                    Command="{Binding RegisterCommand}">
+                    Margin="10,231,89,-201"
+                    Command="{Binding RegisterCommand}" Grid.Column="1" Grid.ColumnSpan="2">
 
         </Button>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="0,-26,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

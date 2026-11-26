@@ -1,4 +1,5 @@
-﻿using SmartPantry.Views;
+﻿using SmartPantry.ViewModels.Services;
+using SmartPantry.Views;
 using System.Windows;
 
 namespace SmartPantry.ViewModels.Common
@@ -104,6 +105,15 @@ namespace SmartPantry.ViewModels.Common
         /// </summary>
         protected void RegisterLogin()
         {
+            AuthService authService = new();
+            bool result = authService.Register(_username, _password, _password_repeat);
+
+            if (!result)
+            {
+                MessageBox.Show("Registration failed. Please check your input and try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             Window? registerWindow = Application.Current.Windows.OfType<RegisterWindow>().FirstOrDefault();
 
             LoginWindow loginWindow = new()
