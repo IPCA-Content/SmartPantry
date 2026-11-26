@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartPantry.Views"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="450" Width="800">
+        Title="RegisterWindow" Height="450" Width="500">
     <Grid>
-        
+        <TextBox x:Name="txtUsername"
+                             Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" Margin="50,100,50,309"/>
+
+        <TextBox x:Name="txtPassword"
+                       Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" Margin="50,166,50,244"/>
+
+        <TextBox x:Name="txtPasswordRepeat"
+                 Text="{Binding PasswordRepeat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" Margin="50,230,50,180"/>
+
+
+        <Button x:Name="btnRegister"                          
+                    BorderThickness="0"
+                    Content="Register"
+                    Foreground="White"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"                           
+                    Margin="142,301,200,97"
+                    Command="{Binding RegisterCommand}">
+
+        </Button>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="50,74,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="50,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="Repeat Password" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center"/>
     </Grid>
 </Window>

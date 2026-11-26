@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using SmartPantry.ViewModels;
+using System.Windows;
 
 namespace SmartPantry.Views
 {
@@ -14,6 +15,8 @@ namespace SmartPantry.Views
         /// </summary>
         public RegisterWindow()
         {
+            RegisterViewModel registerViewModel = new();
+            DataContext = registerViewModel;
             InitializeComponent();
         }
 

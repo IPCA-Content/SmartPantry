@@ -10,13 +10,8 @@ namespace SmartPantry.ViewModels
     /// <summary>
     /// Holds login state and opens the main window when login is requested.
     /// </summary>
-    internal class LoginViewModel : BaseViewModel
+    internal class LoginViewModel : BaseAuthViewModel
     {
-        #region Fields
-
-        private string _username = string.Empty;
-
-        #endregion
 
         #region Properties
 
@@ -25,19 +20,7 @@ namespace SmartPantry.ViewModels
         /// </summary>
         public ICommand LoginCommand { get; }
 
-        /// <summary>
-        /// Gets or sets the username entered for login.
-        /// </summary>
-        public string Username
-        {
-            get => _username;
-            set
-            {
-                _username = value;
-                OnPropertyChanged(nameof(Username));
-                //ValidateProperty(nameof(Username), value);
-            }
-        }
+        public ICommand RegisterCommand { get; }
 
         #endregion
 
@@ -51,28 +34,10 @@ namespace SmartPantry.ViewModels
             _username = "Gil Vicente";
 
             LoginCommand = new RelayCommand(Login);
+            RegisterCommand = new RelayCommand(Register);
         }
 
         #endregion
 
-        #region Methods
-
-        /// <summary>
-        /// Opens the main window and closes the login window if it is open.
-        /// </summary>
-        private void Login()
-        {
-            Window? loginWindow = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
-
-            MainWindow mainWindow = new()
-            {
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
-            mainWindow.Show();
-
-            loginWindow?.Close();
-        }
-
-        #endregion
     }
 }
