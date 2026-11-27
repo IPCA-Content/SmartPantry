@@ -24,3 +24,6 @@ Or open `SmartPantry.slnx` in Visual Studio and run the `SmartPantry` project.
 - `SmartPantry/Models` — models (to be added)
 
 The project uses the CommunityToolkit.Mvvm package for MVVM support.
+
+## Datagrid
+https://learn.microsoft.com/en-us/dotnet/api/system.windows.controls.datagrid?view=windowsdesktop-11.0
